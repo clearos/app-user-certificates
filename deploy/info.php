@@ -5,8 +5,8 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'user_certificates';
-$app['version'] = '5.9.9.3';
-$app['release'] = '2.1';
+$app['version'] = '1.0.9';
+$app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
 $app['license'] = 'GPLv3';
@@ -28,12 +28,13 @@ $app['subcategory'] = lang('base_subcategory_accounts');
 $app['requires'] = array(
     'app-accounts',
     'app-groups',
-    'app-certficate-manager',
+    'app-certificate-manager',
 );
 
 $app['core_requires'] = array(
     'app-accounts-core',
-    'app-certficate-manager-core',
+    'app-certificate-manager-core',
+    'app-user-certificates-plugin-core',
     'system-users-driver', 
 );
 
