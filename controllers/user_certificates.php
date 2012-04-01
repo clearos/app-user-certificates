@@ -65,12 +65,13 @@ class User_Certificates extends ClearOS_Controller
         // Load libraries
         //---------------
 
+        $username = $this->session->userdata('username');
+
         $this->lang->load('certificate_manager');
         $this->lang->load('user_certificates');
         $this->load->library('certificate_manager/SSL');
         $this->load->factory('mode/Mode_Factory');
-
-        $username = $this->session->userdata('username');
+        $this->load->factory('users/User_Factory', $username);
 
         // Validation
         //-----------
@@ -121,6 +122,9 @@ class User_Certificates extends ClearOS_Controller
             $cert_exists = $this->ssl->exists_default_client_certificate($username);
             $ca_exists = $this->ssl->exists_certificate_authority();
             $viewable = ($this->mode->get_mode() === Mode_Engine::MODE_SLAVE) ? FALSE : TRUE;
+
+            $user_info = $this->user->get_info();
+            $is_cert_user = ($user_info['plugins']['user_certificates']) ? TRUE : FALSE;
         } catch (Exception $e) {
             $this->page->view_exception($e);
             return;
@@ -129,8 +133,10 @@ class User_Certificates extends ClearOS_Controller
         // Load the views
         //---------------
 
-        if (! $viewable)
+        if (!$viewable)
             $this->page->view_form('unavailable', $data, lang('user_certificates_app_name'));
+        else if (!$is_cert_user)
+            $this->page->view_form('disabled', $data, lang('user_certificates_app_name'));
         else if (!$ca_exists)
             $this->page->view_form('uninitialized', $data, lang('user_certificates_app_name'));
         else if ((!$cert_exists && $username != 'root'))

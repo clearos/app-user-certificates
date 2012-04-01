@@ -1,5 +1,7 @@
 <?php
 
+$lang['user_certificates_certificates_not_enabled_for_your_account'] = 'Sorry, security certificates are not enabled for your account.';
+
 $lang['user_certificates_app_name'] = 'User Certificates';
 $lang['user_certificates_app_description'] = 'Security certificates are used to secure various apps that you use on a day to day basis.';
 $lang['user_certificates_certificates_not_available_on_this_system'] = 'Sorry, security certificates are not available on this system.  Please contact your system administrator for more information.';
