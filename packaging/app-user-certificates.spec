@@ -1,7 +1,7 @@
 
 Name: app-user-certificates
 Epoch: 1
-Version: 1.0.10
+Version: 1.1.0
 Release: 1%{dist}
 Summary: User Certificates
 License: GPLv3
@@ -18,7 +18,7 @@ Requires: app-certificate-manager
 Security certificates are used to secure various apps that you use on a day to day basis.
 
 %package core
-Summary: User Certificates - APIs and install
+Summary: User Certificates - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
