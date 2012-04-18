@@ -62,10 +62,28 @@ class User_Certificates extends ClearOS_Controller
 
     function index()
     {
-        // Load libraries
-        //---------------
+        // Show account status widget if we're not in a happy state
+        //---------------------------------------------------------
+
+        $this->load->module('accounts/status');
+
+        if ($this->status->unhappy()) {
+            $this->status->widget('user_certificates');
+            return;
+        }
+
+        // Bail if root
+        //-------------
 
         $username = $this->session->userdata('username');
+
+        if ($username === 'root') {
+            $this->page->view_form('root_warning', $data, lang('user_certificates_app_name'));
+            return;
+        }
+
+        // Load libraries
+        //---------------
 
         $this->lang->load('certificate_manager');
         $this->lang->load('user_certificates');
