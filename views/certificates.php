@@ -48,7 +48,7 @@ $headers = array(
 // Anchors
 ///////////////////////////////////////////////////////////////////////////////
 
-$anchors = array(anchor_custom('/app/user_certificates/reset', lang('base_reset')));
+$anchors = array(anchor_custom('/app/user_certificates/certificates/reset', lang('base_reset')));
 
 ///////////////////////////////////////////////////////////////////////////////
 // Items
@@ -57,11 +57,11 @@ $anchors = array(anchor_custom('/app/user_certificates/reset', lang('base_reset'
 foreach ($certs as $basename => $title) {
     if (($username !== 'root') || ($basename === 'ca-cert.pem')) {
         $item['title'] = $title;
-        $item['action'] = '/app/user_certificates/download/' . $basename;
+        $item['action'] = '/app/user_certificates/certificates/download/' . $basename;
         $item['anchors'] = button_set(
             array(
-                anchor_custom('/app/user_certificates/download/' . $basename, lang('base_download')),
-                anchor_custom('/app/user_certificates/install/' . $basename, lang('base_install'))
+                anchor_custom('/app/user_certificates/certificates/download/' . $basename, lang('base_download')),
+                anchor_custom('/app/user_certificates/certificates/install/' . $basename, lang('base_install'))
             )
         );
         $item['details'] = array($item['title']);

@@ -9,3 +9,4 @@ $lang['user_certificates_certificates_not_yet_initialized'] = 'Sorry, the securi
 $lang['user_certificates_initialize_certificate_help'] = 'Please specify a password for protecting your security certificates.  If you forget the password, you will need to start over with a new set of certificates.';
 $lang['user_certificates_create_certificates'] = 'Create Certificates';
 $lang['user_certificates_certificates_not_available_for_this_account'] = 'User certificates are not available for this account.';
+$lang['user_certificates_configuration_file'] = 'Configuration File';
