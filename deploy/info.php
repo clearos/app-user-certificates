@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'user_certificates';
-$app['version'] = '1.1.1';
+$app['version'] = '1.1.2';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -20,6 +20,14 @@ $app['description'] = lang('user_certificates_app_description');
 $app['name'] = lang('user_certificates_app_name');
 $app['category'] = lang('base_category_my_account');
 $app['subcategory'] = lang('base_subcategory_accounts');
+
+/////////////////////////////////////////////////////////////////////////////
+// Controllers
+/////////////////////////////////////////////////////////////////////////////
+
+$app['controllers']['user_certificates']['title'] = $app['name'];
+$app['controllers']['certificates']['title'] = lang('user_certificates_certificates');
+$app['controllers']['openvpn']['title'] = lang('base_configuration');
 
 /////////////////////////////////////////////////////////////////////////////
 // Packaging

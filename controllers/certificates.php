@@ -160,7 +160,7 @@ class Certificates extends ClearOS_Controller
         else if ((!$cert_exists && $username != 'root'))
             $this->page->view_form('initialize', $data, lang('user_certificates_app_name'));
         else
-            $this->page->view_form('certificates', $data, lang('user_certificates_app_name'));
+            $this->page->view_form('certificates', $data, lang('user_certificates_certificates'));
     }
 
     /**
@@ -216,8 +216,8 @@ class Certificates extends ClearOS_Controller
     {
         $this->lang->load('certificate_manager');
 
-        $confirm_uri = '/app/user_certificates/destroy';
-        $cancel_uri = '/app/user_certificates';
+        $confirm_uri = '/app/user_certificates/certificates/destroy';
+        $cancel_uri = '/app/user_certificates/certificates';
         $items = array(lang('certificate_manager_security_certificates'));
 
         $this->page->view_confirm_delete($confirm_uri, $cancel_uri, $items);

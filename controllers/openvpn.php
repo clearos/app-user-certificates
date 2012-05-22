@@ -33,6 +33,7 @@
 // D E P E N D E N C I E S
 ///////////////////////////////////////////////////////////////////////////////
 
+use \clearos\apps\mode\Mode_Engine as Mode_Engine;
 use \clearos\apps\openvpn\OpenVPN as OpenVPN_Server;
 use \Exception as Exception;
 
@@ -75,10 +76,8 @@ class OpenVPN extends ClearOS_Controller
 
         $username = $this->session->userdata('username');
 
-        if ($username === 'root') {
-            $this->page->view_form('root_warning', $data, lang('user_certificates_app_name'));
+        if ($username === 'root')
             return;
-        }
 
         // Bail if OpenVPN is not installed
         //---------------------------------
@@ -92,11 +91,14 @@ class OpenVPN extends ClearOS_Controller
         $this->lang->load('openvpn');
         $this->load->library('openvpn/OpenVPN');
         $this->load->library('user_agent');
+        $this->load->library('certificate_manager/SSL');
+        $this->load->factory('mode/Mode_Factory');
+        $this->load->factory('users/User_Factory', $username);
 
         // Handle form submit
         //-------------------
 
-        if ($this->input->post('submit')) {
+        if ($this->input->post('submit-openvpn')) {
             $host = $this->openvpn->get_server_hostname();
             $config = $this->openvpn->get_client_configuration(
                 $this->input->post('configuration'),
@@ -118,7 +120,7 @@ class OpenVPN extends ClearOS_Controller
 
             echo file_get_contents($tempfile);
 
-            // redirect('/user_certificates/openvpn');
+            return;
         }
 
         // Load the view data 
@@ -135,10 +137,22 @@ class OpenVPN extends ClearOS_Controller
                 $data['configuration'] = OpenVPN_Server::TYPE_OS_MACOS;
             else
                 $data['configuration'] = OpenVPN_Server::TYPE_OS_WINDOWS;
+
+            $cert_exists = $this->ssl->exists_default_client_certificate($username);
+            $viewable = ($this->mode->get_mode() === Mode_Engine::MODE_SLAVE) ? FALSE : TRUE;
+
+            $user_info = $this->user->get_info();
+            $is_cert_user = ($user_info['plugins']['user_certificates']) ? TRUE : FALSE;
         } catch (Exception $e) {
             $this->page->view_exception($e);
             return;
         }
+
+        // Bail in certain scenarios
+        //--------------------------
+
+        if (!$viewable || !$is_cert_user || !$cert_exists || ($username == 'root'))
+            return;
 
         // Load the views
         //---------------

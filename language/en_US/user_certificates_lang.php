@@ -10,3 +10,4 @@ $lang['user_certificates_initialize_certificate_help'] = 'Please specify a passw
 $lang['user_certificates_create_certificates'] = 'Create Certificates';
 $lang['user_certificates_certificates_not_available_for_this_account'] = 'User certificates are not available for this account.';
 $lang['user_certificates_configuration_file'] = 'Configuration File';
+$lang['user_certificates_certificates'] = 'Certificates';
