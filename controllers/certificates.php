@@ -3,9 +3,9 @@
 /**
  * User certificates controller.
  *
- * @category   Apps
- * @package    User_Certificates
- * @subpackage Controllers
+ * @category   apps
+ * @package    user-certificates
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
@@ -43,9 +43,9 @@ use \Exception as Exception;
 /**
  * User certificates controller.
  *
- * @category   Apps
- * @package    User_Certificates
- * @subpackage Controllers
+ * @category   apps
+ * @package    user-certificates
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later

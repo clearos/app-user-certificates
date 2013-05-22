@@ -3,9 +3,9 @@
 /**
  * User certificates root certificate warning view.
  *
- * @category   ClearOS
- * @package    User_Certificates
- * @subpackage Views
+ * @category   apps
+ * @package    user-certificates
+ * @subpackage views
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2012 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
