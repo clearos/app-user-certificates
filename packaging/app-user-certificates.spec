@@ -1,7 +1,7 @@
 
 Name: app-user-certificates
 Epoch: 1
-Version: 1.5.0
+Version: 1.5.10
 Release: 1%{dist}
 Summary: User Certificates
 License: GPLv3
