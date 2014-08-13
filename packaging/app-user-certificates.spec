@@ -1,9 +1,9 @@
 
 Name: app-user-certificates
 Epoch: 1
-Version: 1.5.10
+Version: 1.6.5
 Release: 1%{dist}
-Summary: **user_certificates_app_name**
+Summary: User Certificates
 License: GPLv3
 Group: ClearOS/Apps
 Source: %{name}-%{version}.tar.gz
@@ -15,10 +15,10 @@ Requires: app-groups
 Requires: app-certificate-manager
 
 %description
-**user_certificates_app_description**
+Security certificates are used to secure various apps that you use on a day to day basis.
 
 %package core
-Summary: **user_certificates_app_name** - Core
+Summary: User Certificates - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
@@ -28,7 +28,7 @@ Requires: app-user-certificates-plugin-core
 Requires: system-users-driver
 
 %description core
-**user_certificates_app_description**
+Security certificates are used to secure various apps that you use on a day to day basis.
 
 This package provides the core API and libraries.
 
@@ -78,9 +78,7 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/user_certificates/packaging
-%exclude /usr/clearos/apps/user_certificates/tests
 %dir /usr/clearos/apps/user_certificates
 /usr/clearos/apps/user_certificates/deploy
 /usr/clearos/apps/user_certificates/language
-/usr/clearos/apps/user_certificates/libraries
 /var/clearos/base/access_control/authenticated/user_certificates
