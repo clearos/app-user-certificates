@@ -48,7 +48,7 @@ $app['core_requires'] = array(
 );
 
 $app['core_file_manifest'] = array(
-   'user_certificates.acl' => array( 'target' => '/var/clearos/base/access_control/authenticated/user_certificates' ),
+    'user_certificates.acl' => array( 'target' => '/var/clearos/base/access_control/authenticated/user_certificates' ),
 );
 
 $app['delete_dependency'] = array(
