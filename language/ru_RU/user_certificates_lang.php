@@ -3,12 +3,12 @@
 // http://www.clearfoundation.com/docs/developer/translations/
 
 $lang['user_certificates_app_description'] = 'Security certificates are used to secure various apps that you use on a day to day basis.';
-$lang['user_certificates_app_name'] = 'User Certificates';
-$lang['user_certificates_certificates'] = 'Certificates';
-$lang['user_certificates_certificates_not_available_for_this_account'] = 'User certificates are not available for this account.';
-$lang['user_certificates_certificates_not_available_on_this_system'] = 'Sorry, security certificates are not available on this system.  Please contact your system administrator for more information.';
-$lang['user_certificates_certificates_not_enabled_for_your_account'] = 'Sorry, security certificates are not enabled for your account.';
-$lang['user_certificates_certificates_not_yet_initialized'] = 'Sorry, the security certificates system has not yet been initialized.  Please contact your system administrator for more information.';
-$lang['user_certificates_configuration_file'] = 'Configuration File';
-$lang['user_certificates_create_certificates'] = 'Create Certificates';
-$lang['user_certificates_initialize_certificate_help'] = 'Please specify a password for protecting your security certificates.  If you forget the password, you will need to start over with a new set of certificates.';
+$lang['user_certificates_app_name'] = 'Сертификат пользователя';
+$lang['user_certificates_certificates'] = 'Сертификат';
+$lang['user_certificates_certificates_not_available_for_this_account'] = 'Сертификаты пользователей доступны не для этой учетной записи.';
+$lang['user_certificates_certificates_not_available_on_this_system'] = 'Извините, сертификаты безопасности не доступны на этой системе. Пожалуйста, обратитесь к вашему системному администратору для получения дополнительной информации.';
+$lang['user_certificates_certificates_not_enabled_for_your_account'] = 'Извините, сертификаты безопасности не включены для вашей учетной записи.';
+$lang['user_certificates_certificates_not_yet_initialized'] = 'Извените , система сертификатов безопасности еще не была инициализирована. Пожалуйста, обратитесь к вашему системному администратору для получения дополнительной информации.';
+$lang['user_certificates_configuration_file'] = 'Файл конфигурации';
+$lang['user_certificates_create_certificates'] = 'Создать сертификат';
+$lang['user_certificates_initialize_certificate_help'] = 'Пожалуйста, укажите пароль для защиты сертификатов безопасности. Если вы забыли пароль, вы должны будете начать с новым набором сертификатов.';
