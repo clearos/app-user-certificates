@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'user_certificates';
-$app['version'] = '2.1.8';
+$app['version'] = '2.2.0';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -44,7 +44,6 @@ $app['core_requires'] = array(
     'app-accounts-core',
     'app-certificate-manager-core',
     'app-user-certificates-plugin-core',
-    'system-users-driver', 
 );
 
 $app['core_file_manifest'] = array(

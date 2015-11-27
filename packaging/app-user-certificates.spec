@@ -1,7 +1,7 @@
 
 Name: app-user-certificates
 Epoch: 1
-Version: 2.1.8
+Version: 2.2.0
 Release: 1%{dist}
 Summary: User Certificates
 License: GPLv3
@@ -25,7 +25,6 @@ Requires: app-base-core
 Requires: app-accounts-core
 Requires: app-certificate-manager-core
 Requires: app-user-certificates-plugin-core
-Requires: system-users-driver
 
 %description core
 Security certificates are used to secure various apps that you use on a day to day basis.
